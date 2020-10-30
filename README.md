@@ -1,5 +1,3 @@
-# SRMA_aged-MU
-
 # Do Motoneurons Slow Down with Age? A Systematic Review and Meta Analysis
 
 **Authors:**
