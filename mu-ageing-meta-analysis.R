@@ -11,10 +11,6 @@ library(meta)
 library(metafor)
 library(dmetar)
 
-setwd("~/Dropbox/Research projects/Project - Motor unit and aging review")
-
-
-
 #### Meta analysis
 ####
 ####
@@ -83,14 +79,15 @@ forest(meta_fit,
 sub_group_fit <- subgroup.analysis.mixed.effects(x = meta_fit, subgroups = d$subgroup)
 summary(sub_group_fit)
 
-#png(file = 'forestplot-subgroups.png', width = 8, height = 9.5, res = 600, units = "in") 
+png(file = 'forestplot-subgroups.png', width = 8, height = 9.5, res = 600, units = "in") 
 forest(x = sub_group_fit,
        xlim = c(-3,3),
+       rightlabs = c("SMD","95% CI"),
        sortvar = meta_fit$TE,
        col.predict = "black",
        showweights = T,
        xlab = "Lower rates in older adults               Higher rates in older adults")
-#dev.off()
+dev.off()
 
 
 
@@ -103,8 +100,13 @@ summary(influence_check)
 plot(influence_check, "influence")
 plot(influence_check, "baujat")
 
-## !!! Add sensitivity analysis
-
+## Sensitivity analysis
+# Overall:
+  # Largest - Drop Dalton (2010)
+  # Smallest - Drop Vaillancourt (2003)
+# Subgroups
+  # Largest - Drop Piasechi (2016), Kirk (2018), Dalton (2010)
+  # Smallest - Drop Roos (1999), Christie (2009), Vaillancourt (2003)
 
 #### Publication bias
 ####

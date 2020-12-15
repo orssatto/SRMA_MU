@@ -11,8 +11,6 @@ library(meta)
 library(metafor)
 library(dmetar)
 
-setwd("~/Dropbox/Research projects/Project - Motor unit and aging review")
-
 
 #### Meta regression analysis
 ####
@@ -115,18 +113,18 @@ summary(meta_lower_extensor)
 png(file = 'metareg-three-panel.png', width = 6, height = 12, res = 600, units = "in") 
 par(mfrow=c(3,1), oma=c(1,2,2,1))
 bubble(meta_lower_extensor,
-       xlab = "MVC intensity (%)",
-       ylab = "Standardised mean difference",
+       xlab = "MVC Intensity (%)",
+       ylab = "Standardised Mean Difference",
        col.line = "red",
        xlim = c(0,100),
        studlab = F,
        bg = "white",
        max.cex = 4,
        cex.lab=1.5, cex.axis=1.5, cex.sub=1.5)
-title(main = "(A) Lower-body extensor muscles", adj = 0, cex.main=1.75)
+title(main = "(A) Lower Body Extensor Muscles", adj = 0, cex.main=1.75)
 bubble(meta_lower_flexor,
-       xlab = "MVC intensity (%)",
-       ylab = "Standardised mean difference",
+       xlab = "MVC Intensity (%)",
+       ylab = "Standardised Mean Difference",
        col.line = "red",
        xlim = c(0,100),
        ylim = c(-2,0),
@@ -134,17 +132,17 @@ bubble(meta_lower_flexor,
        bg = "white",
        max.cex = 4,
        cex.lab=1.5, cex.axis=1.5, cex.sub=1.5)
-title(main = "(B) Lower-body flexor muscles", adj = 0, cex.main=1.75)
+title(main = "(B) Lower Body Flexor Muscles", adj = 0, cex.main=1.75)
 bubble(meta_upper,
-       xlab = "MVC intensity (%)",
-       ylab = "Standardised mean difference",
+       xlab = "MVC Intensity (%)",
+       ylab = "Standardised Mean Difference",
        col.line = "red",
        xlim = c(0,100),
        studlab = F,
        bg = "white",
        max.cex = 4,
        cex.lab=1.5, cex.axis=1.5, cex.sub=1.5)
-title(main = "(C) Upper-body muscles", adj = 0, cex.main=1.75)
+title(main = "(C) Upper Body Muscles", adj = 0, cex.main=1.75)
 dev.off() 
 
 
